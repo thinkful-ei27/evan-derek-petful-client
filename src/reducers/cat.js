@@ -10,27 +10,28 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_CAT_REQUEST:
-      return {
-        ...state,
+      state = Object.assign({}, state, {
         loading: true,
         error: null
-      };
-
+      });
+      break;
     case FETCH_CAT_SUCCESS:
-      return {
-        ...state,
+      state = Object.assign({}, state, {
         loading: false,
         data: action.cat
-      };
+      });
+      break;
     case FETCH_CAT_ERROR:
-      return {
-        ...state,
+      state = Object.assign({}, state, {
         loading: false,
         error: action.err
-      };
+      });
+      break;
     default:
-      return state;
+      break;
   }
+
+  return state;
 };
 
 export default reducer;

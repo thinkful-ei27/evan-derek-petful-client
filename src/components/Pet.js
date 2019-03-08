@@ -5,10 +5,7 @@ export default function Pet(props) {
     <section className="pet">
       <header>
         <h2>{props.pet.name}</h2>
-        <img
-          src={props.pet.imageURL}
-          alt={props.pet.imageDescription}
-        />
+        <img src={props.pet.imageURL} alt={props.pet.imageDescription} />
       </header>
       <main>
         <dl>
