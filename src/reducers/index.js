@@ -1,5 +1,5 @@
-import reducer as dogReducer from './dog';
-import reducer as catReducer from './cat';
+import dogReducer from './dog';
+import catReducer from './cat';
 import { combineReducers } from 'redux';
 
 const reducer = combineReducers({
@@ -7,4 +7,4 @@ const reducer = combineReducers({
   cat: catReducer
 })
 
-export default reducer
+export default reducer;

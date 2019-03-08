@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Pet from './components/Pet';
 
 function Dashboard(props) {
@@ -13,4 +14,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard;
+export default connect()(Dashboard);

@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import './index.css';
 
 import Dashboard from './Dashboard';
@@ -29,7 +31,9 @@ const cat = {
   story: 'Thrown on the street'
 };
 ReactDOM.render(
-  <Dashboard catToAdopt={cat} dogToAdopt={dog} />,
+  <Provider store={store}>
+    <Dashboard catToAdopt={cat} dogToAdopt={dog} />
+  </Provider>,
   document.getElementById('root')
 );
 // If you want your app to work offline and load faster, you can change
