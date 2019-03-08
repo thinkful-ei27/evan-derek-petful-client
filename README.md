@@ -11,6 +11,8 @@ You will adopt pets. You will have no choice over them. You will love them, care
 1. React
 2. Redux
 3. Thunk
-   **Server**
-4. Node
-5. Express
+
+**Server**
+
+1. Node
+2. Express
