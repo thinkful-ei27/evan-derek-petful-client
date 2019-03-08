@@ -1,0 +1,22 @@
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 60em;
+}
+
+.app-header {
+  text-align: center;
+}
+
+.pets {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pets > * {
+  flex: 0 1 45%;
+  text-align: center;
+}

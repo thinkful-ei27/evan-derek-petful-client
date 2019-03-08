@@ -1,14 +1,15 @@
 import React from 'react';
+import './Pet.css';
 
 export default function Pet(props) {
   return (
     <section className="pet">
       <header>
         <h2>{props.pet.name}</h2>
-        <img src={props.pet.imageURL} alt={props.pet.imageDescription} />
+        <img class="pet__image" src={props.pet.imageURL} alt={props.pet.imageDescription} />
       </header>
       <main>
-        <dl>
+        <dl class="pet__details">
           <dt>Sex</dt>
           <dd>{props.pet.sex}</dd>
           <dt>Age</dt>
