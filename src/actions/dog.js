@@ -36,14 +36,8 @@ export const adoptDog = () => dispatch => {
   dispatch(fetchDogRequest());
   return fetch(`${API_BASE_URL}/api/dog`, {
     method: 'DELETE',
-    headers: 'Content-Type: application/json'
+    headers: { 'Content-Type': 'application/json' }
   })
-    .then(res => {
-      if (!res.ok) {
-        return Promise.reject(res.statusText);
-      }
-      return res.json();
-    })
     .then(() => dispatch(fetchDog()))
     .catch(err => dispatch(fetchDogError(err)));
 };

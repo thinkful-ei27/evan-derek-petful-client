@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Pet from './components/Pet';
 import actions from './actions';
-const { fetchCat, fetchDog } = actions;
+const { adoptCat, adoptDog, fetchCat, fetchDog } = actions;
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -13,7 +13,6 @@ class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.props.catToAdopt);
     return (
       <main>
         <header>
@@ -22,13 +21,13 @@ class Dashboard extends Component {
         {this.props.catToAdopt && (
           <Pet
             pet={this.props.catToAdopt}
-            onAdoptPet={() => console.log('Whatever')}
+            onAdoptPet={() => this.props.dispatch(adoptCat())}
           />
         )}
         {this.props.dogToAdopt && (
           <Pet
             pet={this.props.dogToAdopt}
-            onAdoptPet={() => console.log('Duuuuude...')}
+            onAdoptPet={() => this.props.dispatch(adoptDog())}
           />
         )}
       </main>
@@ -37,7 +36,6 @@ class Dashboard extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     catToAdopt: state.cat.data,
     dogToAdopt: state.dog.data

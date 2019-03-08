@@ -34,14 +34,11 @@ export const adoptCat = () => dispatch => {
   dispatch(fetchCatRequest());
   return fetch(`${API_BASE_URL}/api/cat`, {
     method: 'DELETE',
-    headers: 'Content-Type: application/json'
+    headers: { 'Content-Type': 'application/json' }
   })
-    .then(res => {
-      if (!res.ok) {
-        return Promise.reject(res.statusText);
-      }
-      return res.json();
+    .then(() => {
+      console.log('this ran');
+      return dispatch(fetchCat());
     })
-    .then(() => dispatch(fetchCat()))
     .catch(err => dispatch(fetchCatError(err)));
 };
